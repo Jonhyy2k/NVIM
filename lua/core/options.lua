@@ -46,7 +46,11 @@ opt.splitbelow = true       -- Split horizontal window to the bottom
 opt.swapfile = false        -- Disable swapfile
 opt.backup = false          -- Disable backup
 opt.undofile = true         -- Enable persistent undo
-opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+-- Cross-platform undo directory
+local home = os.getenv("HOME") or os.getenv("USERPROFILE")
+if home then
+  opt.undodir = home .. "/.vim/undodir"
+end
 
 -- Update time
 opt.updatetime = 250        -- Faster completion (default 4000ms)
