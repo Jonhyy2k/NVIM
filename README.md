@@ -14,7 +14,7 @@ A modern Neovim setup with LSP, Treesitter, Telescope, and more.
 
 ## Prerequisites
 
-- Neovim >= 0.10.0
+- Neovim >= 0.10.0 (0.11+ recommended)
 - Git
 - Node.js (for LSP servers)
 - Ripgrep (for Telescope grep)

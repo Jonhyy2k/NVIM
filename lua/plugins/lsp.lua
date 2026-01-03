@@ -19,7 +19,6 @@ return {
   -- Mason LSP Config
   {
     "williamboman/mason-lspconfig.nvim",
-    version = "v1.29.0", -- Pin to version compatible with Neovim 0.10
     dependencies = { "williamboman/mason.nvim" },
     lazy = true, -- Will be loaded by nvim-lspconfig
   },
@@ -27,7 +26,6 @@ return {
   -- Mason Tool Installer
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
-    version = "v1.1.2", -- Pin to compatible version
     dependencies = { "williamboman/mason.nvim" },
     config = function()
       require("mason-tool-installer").setup({
@@ -39,9 +37,6 @@ return {
           "pylint",
           "eslint_d",
         },
-        integrations = {
-          ["mason-lspconfig"] = false, -- Disable integration to avoid compatibility issues
-        },
       })
     end,
   },
@@ -49,7 +44,6 @@ return {
   -- LSP Config
   {
     "neovim/nvim-lspconfig",
-    version = "v0.1.8", -- Pin to version compatible with Neovim 0.10
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
