@@ -1,0 +1,354 @@
+================================================================================
+                    NEOVIM KEYBINDINGS & COMMANDS REFERENCE
+================================================================================
+
+NOTE: <leader> is mapped to SPACE key
+
+================================================================================
+                              GENERAL COMMANDS
+================================================================================
+
+BASIC NAVIGATION:
+  h, j, k, l         - Move left, down, up, right
+  w                  - Move forward one word
+  b                  - Move backward one word
+  0                  - Move to beginning of line
+  $                  - Move to end of line
+  gg                 - Go to first line
+  G                  - Go to last line
+  Ctrl-d             - Scroll down half page
+  Ctrl-u             - Scroll up half page
+
+EDITING:
+  i                  - Enter insert mode at cursor
+  a                  - Enter insert mode after cursor
+  o                  - Open new line below and enter insert mode
+  O                  - Open new line above and enter insert mode
+  Esc                - Exit insert mode to normal mode
+  u                  - Undo
+  Ctrl-r             - Redo
+  dd                 - Delete (cut) current line
+  yy                 - Yank (copy) current line
+  p                  - Paste after cursor
+  P                  - Paste before cursor
+
+VISUAL MODE:
+  v                  - Enter visual mode (character selection)
+  V                  - Enter visual line mode
+  Ctrl-v             - Enter visual block mode
+  In visual mode:
+    <                - Indent left (stays in visual mode with <gv)
+    >                - Indent right (stays in visual mode with >gv)
+
+SEARCH:
+  /pattern           - Search forward for pattern
+  ?pattern           - Search backward for pattern
+  n                  - Next search result
+  N                  - Previous search result
+  <leader>nh         - Clear search highlights
+
+SAVE & QUIT:
+  <leader>w          - Save file
+  <leader>q          - Quit
+  <leader>Q          - Quit all without saving
+  :wq                - Save and quit
+  :qa!               - Quit all without saving
+
+================================================================================
+                            WINDOW MANAGEMENT
+================================================================================
+
+SPLITTING:
+  <leader>sv         - Split window vertically
+  <leader>sh         - Split window horizontally
+  <leader>se         - Make splits equal size
+  <leader>sx         - Close current split
+
+NAVIGATION:
+  Ctrl-h             - Go to left window
+  Ctrl-j             - Go to lower window
+  Ctrl-k             - Go to upper window
+  Ctrl-l             - Go to right window
+
+RESIZING:
+  Ctrl-Up            - Decrease window height
+  Ctrl-Down          - Increase window height
+  Ctrl-Left          - Decrease window width
+  Ctrl-Right         - Increase window width
+
+================================================================================
+                            BUFFER MANAGEMENT
+================================================================================
+
+  <leader>bn         - Go to next buffer
+  <leader>bp         - Go to previous buffer
+  <leader>bd         - Delete current buffer
+  <leader>fb         - Show open buffers (telescope)
+
+================================================================================
+                              TAB MANAGEMENT
+================================================================================
+
+  <leader>to         - Open new tab
+  <leader>tx         - Close current tab
+  <leader>tn         - Go to next tab
+  <leader>tp         - Go to previous tab
+
+================================================================================
+                            FILE EXPLORER (nvim-tree)
+================================================================================
+
+  <leader>ee         - Toggle file explorer
+  <leader>ef         - Toggle file explorer on current file
+  <leader>ec         - Collapse file explorer
+  <leader>er         - Refresh file explorer
+
+INSIDE FILE EXPLORER:
+  Enter              - Open file/folder
+  a                  - Create new file/folder (end with / for folder)
+  d                  - Delete file/folder
+  r                  - Rename file/folder
+  x                  - Cut file/folder
+  c                  - Copy file/folder
+  p                  - Paste file/folder
+  R                  - Refresh
+  H                  - Toggle hidden files
+  E                  - Expand all folders
+  W                  - Collapse all folders
+
+================================================================================
+                        FUZZY FINDER (Telescope)
+================================================================================
+
+  <leader>ff         - Find files in current working directory
+  <leader>fr         - Find recent files
+  <leader>fs         - Find string in current working directory
+  <leader>fc         - Find string under cursor in current working directory
+  <leader>fb         - Show open buffers
+  <leader>fh         - Show help tags
+
+INSIDE TELESCOPE:
+  Ctrl-j             - Move to next result
+  Ctrl-k             - Move to previous result
+  Ctrl-q             - Send selected to quickfix list
+  Esc                - Close telescope
+
+================================================================================
+                     LSP (Language Server Protocol)
+================================================================================
+
+CODE NAVIGATION:
+  gD                 - Go to declaration
+  gd                 - Go to definition (telescope)
+  gi                 - Go to implementation (telescope)
+  gt                 - Go to type definition (telescope)
+  gR                 - Show references (telescope)
+  K                  - Show hover documentation
+
+CODE ACTIONS:
+  <leader>ca         - See available code actions
+  <leader>rn         - Smart rename symbol
+  <leader>rs         - Restart LSP
+
+DIAGNOSTICS (errors/warnings):
+  <leader>D          - Show buffer diagnostics (telescope)
+  <leader>d          - Show line diagnostics in float window
+  [d                 - Go to previous diagnostic
+  ]d                 - Go to next diagnostic
+
+================================================================================
+                         AUTOCOMPLETION (nvim-cmp)
+================================================================================
+
+IN INSERT MODE:
+  Ctrl-k             - Previous suggestion
+  Ctrl-j             - Next suggestion
+  Ctrl-Space         - Trigger completion
+  Ctrl-e             - Close completion window
+  Enter              - Confirm selection
+  Ctrl-b             - Scroll docs backward
+  Ctrl-f             - Scroll docs forward
+
+================================================================================
+                              COMMENTING
+================================================================================
+
+  gcc                - Toggle line comment
+  gbc                - Toggle block comment
+  gc (in visual)     - Comment selection
+  gb (in visual)     - Block comment selection
+
+================================================================================
+                            GIT INTEGRATION
+================================================================================
+
+NAVIGATION:
+  ]c                 - Next git hunk
+  [c                 - Previous git hunk
+
+ACTIONS:
+  <leader>hs         - Stage hunk
+  <leader>hr         - Reset hunk
+  <leader>hS         - Stage buffer
+  <leader>hu         - Undo stage hunk
+  <leader>hR         - Reset buffer
+  <leader>hp         - Preview hunk
+  <leader>hb         - Blame line (full)
+  <leader>tb         - Toggle current line blame
+  <leader>hd         - Diff this
+  <leader>hD         - Diff this ~
+
+================================================================================
+                         TREESITTER (Syntax Highlighting)
+================================================================================
+
+  Ctrl-Space         - Init selection
+  Ctrl-Space (again) - Increment node selection
+  Backspace          - Decrement node selection
+
+================================================================================
+                              TERMINAL MODE
+================================================================================
+
+  <leader>tt         - Open terminal
+  Esc (in terminal)  - Exit terminal mode to normal mode
+
+================================================================================
+                            TEXT MANIPULATION
+================================================================================
+
+  Alt-j              - Move line down
+  Alt-k              - Move line up
+  Alt-j (visual)     - Move selection down
+  Alt-k (visual)     - Move selection up
+  p (visual)         - Paste without yanking (doesn't replace clipboard)
+
+================================================================================
+                         PLUGIN MANAGEMENT (lazy.nvim)
+================================================================================
+
+  :Lazy              - Open lazy.nvim plugin manager UI
+  :Lazy update       - Update all plugins
+  :Lazy sync         - Install missing and update plugins
+  :Lazy clean        - Remove unused plugins
+
+================================================================================
+                           LSP SERVER MANAGEMENT
+================================================================================
+
+  :Mason             - Open Mason (LSP server installer) UI
+  :LspInfo           - Show LSP server info for current buffer
+  :LspRestart        - Restart LSP server
+
+================================================================================
+                            USEFUL VIM COMMANDS
+================================================================================
+
+  :e filename        - Edit a file
+  :w                 - Write (save) the file
+  :q                 - Quit
+  :q!                - Quit without saving
+  :wq or :x          - Write and quit
+  :help keyword      - Open help for keyword
+  :set number        - Show line numbers
+  :set relativenumber - Show relative line numbers
+  :noh               - Clear search highlighting
+  :%s/old/new/g      - Replace all old with new throughout file
+  :%s/old/new/gc     - Replace all old with new throughout file with confirmations
+
+================================================================================
+                              WHICH-KEY
+================================================================================
+
+After pressing <leader>, wait a moment and a popup will show you all available
+keybindings that start with that prefix. This makes discovering commands easier!
+
+================================================================================
+                           INSTALLATION NOTES
+================================================================================
+
+1. First time opening Neovim after this config:
+   - All plugins will be automatically downloaded and installed
+   - LSP servers, formatters, and linters will be installed via Mason
+   - This may take a few minutes
+
+2. After installation:
+   - Restart Neovim
+   - Run :checkhealth to verify everything is working correctly
+
+3. To install language servers manually:
+   - Run :Mason
+   - Search for your desired language server
+   - Press 'i' to install
+
+4. External dependencies needed:
+   - Git (for plugin management)
+   - Node.js (for many LSP servers)
+   - Python3 (for Python LSP)
+   - Ripgrep (for telescope live_grep) - install with: sudo apt install ripgrep
+   - GCC or Make (for compiling some plugins)
+
+================================================================================
+                            CUSTOMIZATION TIPS
+================================================================================
+
+Config files are located in: ~/nvim/
+
+Structure:
+  ~/nvim/init.lua                      - Main config file
+  ~/nvim/lua/core/options.lua          - General Neovim options
+  ~/nvim/lua/core/keymaps.lua          - Core keymappings
+  ~/nvim/lua/plugins/                  - Plugin configurations
+
+To customize:
+1. Edit files in ~/nvim/lua/core/ for general settings
+2. Edit files in ~/nvim/lua/plugins/ for plugin-specific settings
+3. After changes, restart Neovim or run :source %
+
+To add more plugins:
+- Create a new file in ~/nvim/lua/plugins/
+- Follow the lazy.nvim plugin specification format
+- Restart Neovim and plugins will auto-install
+
+================================================================================
+                              COLOR SCHEME
+================================================================================
+
+Current theme: TokyoNight
+
+To change theme:
+1. Edit ~/nvim/lua/plugins/colorscheme.lua
+2. Change the plugin to your preferred theme
+3. Update the vim.cmd([[colorscheme name]]) line
+
+Popular alternatives:
+  - catppuccin/nvim
+  - rebelot/kanagawa.nvim
+  - EdenEast/nightfox.nvim
+  - rose-pine/neovim
+
+================================================================================
+                           TROUBLESHOOTING
+================================================================================
+
+If something doesn't work:
+1. Run :checkhealth - this will diagnose common issues
+2. Run :Lazy sync - to ensure all plugins are installed
+3. Run :Mason - to check LSP server installation
+4. Check logs: :messages
+
+To completely reset:
+1. Backup your config: cp -r ~/nvim ~/nvim-backup
+2. Remove plugin data: rm -rf ~/.local/share/nvim
+3. Restart Neovim to reinstall everything
+
+================================================================================
+                            LEARNING RESOURCES
+================================================================================
+
+- Run :Tutor for built-in Neovim tutorial
+- Run :help followed by any command for detailed help
+- Visit https://neovim.io/ for official documentation
+- Check out https://github.com/rockerBOO/awesome-neovim for more plugins
+
+================================================================================

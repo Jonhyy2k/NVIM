@@ -1,0 +1,10 @@
+# Ignore plugin data (will be auto-installed)
+lazy-lock.json
+
+# Ignore any local/temporary files
+*.log
+*.tmp
+.DS_Store
+
+# Ignore any personal/local settings you don't want to share
+local.lua
